@@ -1,0 +1,29 @@
+{
+  "name": "{{projectName}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "dev": "nodemon src/index.js",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix"
+  },
+  "dependencies": {
+    "elevenlabs": "^0.1.0",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "eslint": "^8.55.0"
+  },
+  "author": "{{author}}",
+  "license": "MIT",
+  "keywords": ["voice", "ai", "elevenlabs", "tts", "voice-agent"],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

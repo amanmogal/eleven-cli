@@ -1,0 +1,35 @@
+{
+  "name": "React Voice App",
+  "description": "React application with voice synthesis capabilities",
+  "category": "web",
+  "language": "javascript",
+  "framework": "react",
+  "features": [
+    "React-based UI",
+    "Voice synthesis interface",
+    "Real-time audio playback",
+    "Voice parameter controls",
+    "Audio download",
+    "Responsive design",
+    "Framer Motion animations"
+  ],
+  "requirements": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "installDependencies": true,
+  "additionalFiles": [
+    {
+      "path": "public/index.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <link rel=\"icon\" href=\"%PUBLIC_URL%/favicon.ico\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta name=\"theme-color\" content=\"#000000\" />\n    <meta name=\"description\" content=\"{{description}}\" />\n    <title>{{projectName}}</title>\n  </head>\n  <body>\n    <noscript>You need to enable JavaScript to run this app.</noscript>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+    },
+    {
+      "path": "src/index.js",
+      "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport './index.css';\nimport App from './App';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);"
+    },
+    {
+      "path": "src/index.css",
+      "content": "body {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\n    monospace;\n}"
+    }
+  ]
+}

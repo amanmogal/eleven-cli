@@ -1,0 +1,31 @@
+{
+  "name": "Python Voice Bot",
+  "description": "Python voice bot with Flask web interface",
+  "category": "web",
+  "language": "python",
+  "framework": "flask",
+  "features": [
+    "Flask web interface",
+    "Voice synthesis API",
+    "Real-time audio generation",
+    "Voice parameter controls",
+    "Audio download",
+    "Health monitoring",
+    "Background cleanup"
+  ],
+  "requirements": {
+    "python": ">=3.8.0",
+    "pip": ">=20.0.0"
+  },
+  "installDependencies": true,
+  "additionalFiles": [
+    {
+      "path": "requirements.txt",
+      "content": "Flask==2.3.3\nWerkzeug==2.3.7\nrequests==2.31.0\nelevenlabs==0.2.26\npython-dotenv==1.0.0\ngunicorn==21.2.0"
+    },
+    {
+      "path": "templates/index.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>{{projectName}}</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }\n        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }\n        textarea { width: 100%; height: 100px; margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }\n        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }\n        button:hover { background: #0056b3; }\n        .status { margin: 20px 0; padding: 10px; border-radius: 5px; }\n        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }\n        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>🎧 {{projectName}}</h1>\n        <p>{{description}}</p>\n        \n        <div>\n            <label for=\"text\">Text to Synthesize:</label>\n            <textarea id=\"text\" placeholder=\"Enter text to convert to speech...\">{{defaultText}}</textarea>\n        </div>\n        \n        <div>\n            <button onclick=\"synthesize()\">Generate Voice</button>\n            <button onclick=\"playAudio()\" id=\"playBtn\" disabled>Play Audio</button>\n            <button onclick=\"downloadAudio()\" id=\"downloadBtn\" disabled>Download</button>\n        </div>\n        \n        <div id=\"status\"></div>\n        <audio id=\"audioPlayer\" style=\"width: 100%; margin-top: 20px;\"></audio>\n        \n        <script>\n            let currentAudioUrl = null;\n            \n            async function synthesize() {\n                const text = document.getElementById('text').value;\n                if (!text.trim()) {\n                    showStatus('Please enter some text', 'error');\n                    return;\n                }\n                \n                showStatus('Generating voice...', 'info');\n                \n                try {\n                    const response = await fetch('/api/synthesize', {\n                        method: 'POST',\n                        headers: { 'Content-Type': 'application/json' },\n                        body: JSON.stringify({ text: text })\n                    });\n                    \n                    const data = await response.json();\n                    \n                    if (data.success) {\n                        showStatus('Voice generated successfully!', 'success');\n                        currentAudioUrl = `/api/download/${data.requestId}`;\n                        document.getElementById('playBtn').disabled = false;\n                        document.getElementById('downloadBtn').disabled = false;\n                        document.getElementById('audioPlayer').src = currentAudioUrl;\n                    } else {\n                        showStatus('Error: ' + data.error, 'error');\n                    }\n                } catch (error) {\n                    showStatus('Error: ' + error.message, 'error');\n                }\n            }\n            \n            function playAudio() {\n                if (currentAudioUrl) {\n                    document.getElementById('audioPlayer').play();\n                }\n            }\n            \n            function downloadAudio() {\n                if (currentAudioUrl) {\n                    const link = document.createElement('a');\n                    link.href = currentAudioUrl;\n                    link.download = 'voice.mp3';\n                    link.click();\n                }\n            }\n            \n            function showStatus(message, type) {\n                const statusDiv = document.getElementById('status');\n                statusDiv.innerHTML = `<div class=\"status ${type}\">${message}</div>`;\n            }\n        </script>\n    </div>\n</body>\n</html>"
+    }
+  ]
+}
