@@ -1,53 +1,53 @@
-# 🎧 Eleven-CLI
+# Eleven Voice CLI
 
-> **Enterprise-Grade CLI for Building ElevenLabs Voice Agents with AI Assistance**
+> **CLI for Building ElevenLabs Voice Agents with AI Assistance**
 
-[![npm version](https://badge.fury.io/js/eleven-cli.svg)](https://badge.fury.io/js/eleven-cli)
+[![npm version](https://badge.fury.io/js/eleven-voice-cli.svg)](https://badge.fury.io/js/eleven-voice-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/node/v/eleven-cli.svg)](https://nodejs.org/)
+[![Node.js Version](https://img.shields.io/node/v/eleven-voice-cli.svg)](https://nodejs.org/)
 
-A powerful, enterprise-grade command-line tool that makes it incredibly easy to build voice agents and applications using ElevenLabs' cutting-edge text-to-speech technology. Combined with Cursor AI assistance, it provides a comprehensive voice development platform.
+A powerful command-line tool that makes it easy to build voice agents and applications using ElevenLabs' text-to-speech technology. Combined with AI assistance, it provides a comprehensive voice development platform.
 
-## ✨ **Features**
+## Features
 
-### 🎧 **Core Voice Features**
+### Core Voice Features
 - **High-Quality Voice Synthesis** - Powered by ElevenLabs' advanced TTS
 - **Voice Cloning** - Create custom voices from audio samples
 - **Voice Analysis** - Analyze and optimize voice quality
 - **Voice Tuning** - Fine-tune voice parameters for optimal results
 - **Batch Processing** - Process multiple texts efficiently
 
-### 🤖 **AI Integration**
-- **Cursor AI Integration** - AI-powered documentation generation
+### AI Integration
+- **AI Integration** - AI-powered documentation generation
 - **Smart Code Analysis** - Intelligent code suggestions and fixes
 - **Automated Documentation** - Generate comprehensive project docs
 - **AI-Assisted Development** - Streamline your development workflow
 
-### 🏗️ **Project Management**
+### Project Management
 - **Project Scaffolding** - Quick project setup with templates
 - **Multi-Framework Support** - React, Node.js, Python templates
 - **Template System** - Customizable project templates
 - **Configuration Management** - Flexible configuration options
 
-### 🔧 **Enterprise Features**
+### Advanced Features
 - **Plugin Architecture** - Extensible plugin system
 - **Analytics & Monitoring** - Comprehensive usage tracking
 - **Performance Optimization** - Caching and connection pooling
 - **Advanced Testing** - Comprehensive test suite
 - **System Health Monitoring** - Real-time system diagnostics
 
-## 🚀 **Quick Start**
+## Quick Start
 
-### **Installation**
+### Installation
 ```bash
 # Install globally
-npm install -g eleven-cli
+npm install -g eleven-voice-cli
 
 # Verify installation
 eleven --version
 ```
 
-### **Setup**
+### Setup
 ```bash
 # Set your ElevenLabs API key
 export ELEVEN_API_KEY=your_api_key_here
@@ -59,18 +59,18 @@ eleven init my-voice-agent
 eleven test --text "Hello, world!"
 ```
 
-**🎉 That's it! You're ready to build voice applications!**
+That's it! You're ready to build voice applications!
 
-## 📖 **Documentation**
+## Documentation
 
-- **[📚 Complete User Guide](./USER_GUIDE.md)** - Comprehensive usage guide
-- **[🚀 Deployment Guide](./DEPLOYMENT_GUIDE.md)** - Production deployment instructions
-- **[📊 Project Analysis](./COMPREHENSIVE_PROJECT_ANALYSIS.md)** - Technical architecture overview
-- **[🔧 API Reference](./docs/api/index.md)** - Complete API documentation
+- **[Complete User Guide](./USER_GUIDE.md)** - Comprehensive usage guide
+- **[Deployment Guide](./DEPLOYMENT_GUIDE.md)** - Production deployment instructions
+- **[Project Analysis](./COMPREHENSIVE_PROJECT_ANALYSIS.md)** - Technical architecture overview
+- **[API Reference](./docs/api/index.md)** - Complete API documentation
 
-## 🎯 **Commands**
+## Commands
 
-### **Core Commands**
+### Core Commands
 ```bash
 eleven init [project]          # Create new voice agent project
 eleven test [options]          # Test TTS with sample text
@@ -80,20 +80,20 @@ eleven config [options]        # Manage configuration
 eleven status [options]        # Show system status
 ```
 
-### **Advanced Voice Features**
+### Advanced Voice Features
 ```bash
 eleven clone [options]         # Clone voices from audio samples
 eleven analyze [options]       # Analyze voice quality
 ```
 
-### **System Management**
+### System Management
 ```bash
 eleven advanced [options]      # Advanced features and system management
 ```
 
-## 🏗️ **Project Templates**
+## Project Templates
 
-### **Voice Agent Template**
+### Voice Agent Template
 ```bash
 eleven init my-agent --template voice-agent
 ```
@@ -101,7 +101,7 @@ eleven init my-agent --template voice-agent
 - ElevenLabs integration
 - Simple voice synthesis
 
-### **React Voice App**
+### React Voice App
 ```bash
 eleven init my-app --template react-voice
 ```
@@ -109,7 +109,7 @@ eleven init my-app --template react-voice
 - Modern UI with Tailwind CSS
 - Real-time voice generation
 
-### **Python Voice Bot**
+### Python Voice Bot
 ```bash
 eleven init my-bot --template python-voice
 ```
@@ -117,9 +117,9 @@ eleven init my-bot --template python-voice
 - REST API endpoints
 - Background processing
 
-## 💡 **Examples**
+## Examples
 
-### **Basic Voice Synthesis**
+### Basic Voice Synthesis
 ```bash
 # Test with default voice
 eleven test --text "Hello, world!"
@@ -131,7 +131,7 @@ eleven test --text "Hello!" --voice EXAVITQu4vr4xnSDxMaL
 eleven test --interactive
 ```
 
-### **Voice Cloning**
+### Voice Cloning
 ```bash
 # Clone your voice
 eleven clone --file sample.wav --name "My Voice"
@@ -140,7 +140,7 @@ eleven clone --file sample.wav --name "My Voice"
 eleven clone --test --voice cloned_voice_id
 ```
 
-### **Voice Analysis**
+### Voice Analysis
 ```bash
 # Analyze voice quality
 eleven analyze --voice EXAVITQu4vr4xnSDxMaL
@@ -149,7 +149,7 @@ eleven analyze --voice EXAVITQu4vr4xnSDxMaL
 eleven analyze --voice EXAVITQu4vr4xnSDxMaL --save
 ```
 
-### **Project Creation**
+### Project Creation
 ```bash
 # Create React voice app
 eleven init my-react-app --template react-voice
@@ -161,9 +161,9 @@ eleven init my-python-bot --template python-voice
 eleven init --interactive
 ```
 
-## 🔧 **Advanced Features**
+## Advanced Features
 
-### **Performance Dashboard**
+### Performance Dashboard
 ```bash
 eleven advanced --performance
 ```
@@ -172,7 +172,7 @@ eleven advanced --performance
 - Memory usage
 - System performance metrics
 
-### **Analytics Dashboard**
+### Analytics Dashboard
 ```bash
 eleven advanced --analytics
 ```
@@ -181,7 +181,7 @@ eleven advanced --analytics
 - Error tracking
 - Session information
 
-### **Plugin Management**
+### Plugin Management
 ```bash
 eleven advanced --plugins
 ```
@@ -189,7 +189,7 @@ eleven advanced --plugins
 - Install new plugins
 - Manage plugin configurations
 
-### **System Optimization**
+### System Optimization
 ```bash
 eleven advanced --optimize
 ```
@@ -197,14 +197,14 @@ eleven advanced --optimize
 - Performance tuning
 - Resource optimization
 
-## 🛠️ **Development**
+## Development
 
-### **Prerequisites**
+### Prerequisites
 - Node.js 16.0.0 or higher
 - npm 8.0.0 or higher
 - ElevenLabs API key
 
-### **Installation from Source**
+### Installation from Source
 ```bash
 # Clone repository
 git clone https://github.com/silver-team/eleven-cli.git
@@ -217,7 +217,7 @@ npm install
 npm link
 ```
 
-### **Development Scripts**
+### Development Scripts
 ```bash
 npm run dev          # Run in development mode
 npm test            # Run tests
@@ -227,7 +227,7 @@ npm run format      # Format code
 npm run validate    # Validate everything
 ```
 
-## 📊 **Project Statistics**
+## Project Statistics
 
 - **22 JavaScript files** with **9,825 lines of code**
 - **9 comprehensive commands** across 3 development phases
@@ -235,7 +235,7 @@ npm run validate    # Validate everything
 - **3 project templates** supporting multiple frameworks
 - **Production-ready architecture** with comprehensive error handling
 
-## 🏆 **Quality Metrics**
+## Quality Metrics
 
 - **Code Coverage**: 80%+ (target)
 - **Lint Score**: 100% (no errors)
@@ -244,7 +244,7 @@ npm run validate    # Validate everything
 - **Performance**: 3x faster with caching
 - **Reliability**: <1% error rate
 
-## 🔒 **Security**
+## Security
 
 - **API Key Protection**: Environment variable storage
 - **Data Anonymization**: Privacy-focused analytics
@@ -252,7 +252,7 @@ npm run validate    # Validate everything
 - **Error Handling**: Secure error messages
 - **File Operations**: Atomic and safe operations
 
-## 🚀 **Performance**
+## Performance
 
 - **Cache Hit Rate**: 85%+ (typical)
 - **API Response Time**: 3x improvement with caching
@@ -260,26 +260,26 @@ npm run validate    # Validate everything
 - **Concurrent Requests**: 10 (configurable)
 - **Error Rate**: <1% (typical)
 
-## 📈 **Roadmap**
+## Roadmap
 
-### **Completed (Phase 1-3)**
-- ✅ Core voice synthesis features
-- ✅ Voice cloning and analysis
-- ✅ Project scaffolding system
-- ✅ AI integration with Cursor
-- ✅ Plugin architecture
-- ✅ Analytics and monitoring
-- ✅ Advanced testing framework
-- ✅ Performance optimization
+### Completed (Phase 1-3)
+- Core voice synthesis features
+- Voice cloning and analysis
+- Project scaffolding system
+- AI integration with Cursor
+- Plugin architecture
+- Analytics and monitoring
+- Advanced testing framework
+- Performance optimization
 
-### **Future Enhancements**
-- 🔮 Community plugin marketplace
-- 🔮 Cloud integration and remote analytics
-- 🔮 AI-powered voice optimization
-- 🔮 Enterprise team collaboration features
-- 🔮 Mobile development support
+### Future Enhancements
+- Community plugin marketplace
+- Cloud integration and remote analytics
+- AI-powered voice optimization
+- Enterprise team collaboration features
+- Mobile development support
 
-## 🤝 **Contributing**
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
 
@@ -289,18 +289,17 @@ We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md)
 4. Add tests
 5. Submit a pull request
 
-## 📄 **License**
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 **Support**
+## Support
 
 - **Documentation**: [Complete User Guide](./USER_GUIDE.md)
 - **Issues**: [GitHub Issues](https://github.com/silver-team/eleven-cursor/issues)
-- **Discord**: [Join our community](https://discord.gg/eleven-cursor)
-- **Email**: [support@silver.dev](mailto:support@silver.dev)
+- **Email**: [amanmogal123@gmail.com](mailto:amanmogal123@gmail.com)
 
-## 🙏 **Acknowledgments**
+## Acknowledgments
 
 - [ElevenLabs](https://elevenlabs.io) for their amazing TTS technology
 - [Cursor](https://cursor.sh) for AI-powered development assistance
@@ -308,17 +307,17 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🎉 **Get Started Today!**
+## Get Started Today!
 
 ```bash
 # Install and start building
-npm install -g eleven-cli
+npm install -g eleven-voice-cli
 eleven init my-voice-agent
 eleven test --text "Hello, world!"
 ```
 
-**Ready to build the future of voice applications?** 🚀
+Ready to build the future of voice applications!
 
 ---
 
-*Made with ❤️ by the Silver Team*
+*Made by Aman*

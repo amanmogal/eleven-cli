@@ -1,7 +1,7 @@
 {
   "name": "eleven-voice-cli",
-  "version": "1.0.3",
-  "description": "🎧 CLI for building ElevenLabs voice agents with AI assistance",
+  "version": "1.0.4",
+  "description": "CLI for building ElevenLabs voice agents with AI assistance",
   "main": "bin/index.js",
   "bin": {
     "eleven": "./bin/index.js"
@@ -33,9 +33,9 @@
     "developer-tools"
   ],
   "author": {
-    "name": "Silver Team",
-    "email": "team@silver.dev",
-    "url": "https://github.com/silver-team"
+    "name": "Aman",
+    "email": "amanmogal123@gmail.com",
+    "url": "https://github.com/amanmogal"
   },
   "license": "MIT",
   "homepage": "https://github.com/silver-team/eleven-cli#readme",

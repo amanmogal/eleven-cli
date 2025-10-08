@@ -32,7 +32,7 @@ const program = new Command();
 const welcomeMessage = boxen(
   chalk.cyan.bold('🎧 eleven-cli') + '\n' +
   chalk.gray('CLI for building ElevenLabs voice agents with AI assistance') + '\n' +
-  chalk.gray('Version: 1.0.3'),
+  chalk.gray('Version: 1.0.4'),
   {
     padding: 1,
     margin: 1,
@@ -45,7 +45,7 @@ const welcomeMessage = boxen(
 program
   .name('eleven')
   .description('🎧 CLI for building ElevenLabs voice agents with AI assistance')
-  .version('1.0.3')
+  .version('1.0.4')
   .addHelpText('before', welcomeMessage);
 
 // Global options
