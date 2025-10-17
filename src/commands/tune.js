@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('inquirer').default;
 const chalk = require('chalk').default;
 const ora = require('ora');
 const fs = require('fs');

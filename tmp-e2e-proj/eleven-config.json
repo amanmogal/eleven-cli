@@ -1,0 +1,11 @@
+{
+  "projectName": "e2e-proj",
+  "description": "A voice agent built with ElevenLabs and Cursor AI",
+  "template": "voice-agent",
+  "voice": "EXAVITQu4vr4xnSDxMaL",
+  "author": "apple",
+  "version": "0.1.0",
+  "createdAt": "2025-10-17T14:55:57.899Z",
+  "generatedBy": "eleven-cursor",
+  "generatedVersion": "0.1.0"
+}

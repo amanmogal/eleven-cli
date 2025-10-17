@@ -181,41 +181,41 @@ function checkConfiguration() {
  * @param {Object} status - Status information
  */
 function displayStatus(status) {
-  console.log(chalk.cyan('📊 Eleven-Cursor Status Report'));
+  console.log(chalk.cyan('Eleven-Cursor Status Report'));
   console.log(chalk.gray('─'.repeat(50)));
 
   // API Status
-  console.log(chalk.white('\n🔌 ElevenLabs API:'));
+  console.log(chalk.white('\nElevenLabs API:'));
   if (status.api.status === 'connected') {
-    console.log(chalk.green(`  ✅ Connected (${status.api.voices} voices available)`));
+    console.log(chalk.green(`  [CONNECTED] (${status.api.voices} voices available)`));
   } else {
-    console.log(chalk.red(`  ❌ ${status.api.status}: ${status.api.message}`));
+    console.log(chalk.red(`  [ERROR] ${status.api.status}: ${status.api.message}`));
   }
 
   // Cursor CLI Status
   console.log(chalk.white('\n🤖 Cursor CLI:'));
   if (status.cursor.status === 'available') {
-    console.log(chalk.green(`  ✅ Available (${status.cursor.version})`));
+    console.log(chalk.green(`  [AVAILABLE] (${status.cursor.version})`));
   } else {
-    console.log(chalk.red(`  ❌ ${status.cursor.status}: ${status.cursor.message}`));
+    console.log(chalk.red(`  [ERROR] ${status.cursor.status}: ${status.cursor.message}`));
   }
 
   // Configuration Status
-  console.log(chalk.white('\n⚙️ Configuration:'));
+  console.log(chalk.white('\nConfiguration:'));
   if (status.config.status === 'valid') {
     console.log(chalk.green('  ✅ Valid'));
     console.log(chalk.gray(`  API Key: ${status.config.hasApiKey ? 'Set' : 'Not Set'}`));
   } else {
-    console.log(chalk.red(`  ❌ ${status.config.status}`));
+    console.log(chalk.red(`  [ERROR] ${status.config.status}`));
     status.config.issues.forEach(issue => {
       console.log(chalk.red(`    • ${issue}`));
     });
   }
 
   // System Status
-  console.log(chalk.white('\n💻 System:'));
+  console.log(chalk.white('\nSystem:'));
   if (status.system.status === 'ok') {
-    console.log(chalk.green('  ✅ Requirements met'));
+    console.log(chalk.green('  [REQUIREMENTS MET]'));
     console.log(chalk.gray(`  Node.js: ${status.system.requirements.nodeVersion}`));
     console.log(chalk.gray(`  Platform: ${status.system.requirements.platform}`));
   } else {
@@ -233,9 +233,9 @@ function displayStatus(status) {
                   status.system.status === 'ok';
 
   if (allGood) {
-    console.log(chalk.green('🎉 All systems operational!'));
+    console.log(chalk.green('[SUCCESS] All systems operational!'));
   } else {
-    console.log(chalk.yellow('⚠️ Some issues detected. Check the details above.'));
+    console.log(chalk.yellow('[WARNING] Some issues detected. Check the details above.'));
   }
 }
 
@@ -273,7 +273,7 @@ async function generateHealthReport(options = {}) {
  */
 async function statusCommand(options = {}) {
   try {
-    logger.info('📊 Checking application status...');
+    logger.info('Checking application status...');
 
     const status = {
       api: { status: 'skipped' },

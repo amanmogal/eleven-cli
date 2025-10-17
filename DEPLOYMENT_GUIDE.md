@@ -16,8 +16,8 @@
 
 ### **1. Install the CLI**
 ```bash
-# Install globally via npm
-npm install -g eleven-cli
+# Install globally via npm (recommended)
+npm install -g eleven-voice-cli
 
 # Verify installation
 eleven --version
@@ -32,19 +32,21 @@ export ELEVEN_API_KEY=your_api_key_here
 echo "ELEVEN_API_KEY=your_api_key_here" > .env
 ```
 
-### **3. Create your first project**
+### **3. Start the Magnetic CLI (Recommended)**
 ```bash
-# Create a new voice agent project
-eleven init my-voice-agent
+# Launch the magnetic interface (auto-integrates with Cursor AI)
+eleven
 
-# Navigate to your project
-cd my-voice-agent
-
-# Test voice synthesis
-eleven test --text "Hello, world!"
+# Or use the dedicated magnetic command
+npm run magnetic
 ```
 
-**🎉 You're ready to go!**
+**🎉 You're ready to go! The Magnetic CLI provides the best experience with:**
+- 🎨 Beautiful interface with colors and icons
+- 🤖 Auto-Cursor AI integration
+- ⚡ Magnetic shortcuts (!status, !tips, !history)
+- 📋 Background task management
+- 💡 Smart auto-complete
 
 ---
 
@@ -568,7 +570,62 @@ sudo systemctl enable eleven-cli
 sudo systemctl start eleven-cli
 ```
 
-### **4. Nginx Configuration**
+### **4. Deployment Script**
+
+Create a deployment script for easy setup:
+
+```bash
+#!/bin/bash
+# deploy.sh - Eleven-CLI Deployment Script
+
+set -e
+
+echo "🚀 Deploying Eleven-CLI..."
+
+# Check prerequisites
+command -v node >/dev/null 2>&1 || { echo "❌ Node.js is required but not installed."; exit 1; }
+command -v npm >/dev/null 2>&1 || { echo "❌ npm is required but not installed."; exit 1; }
+
+# Install globally
+echo "📦 Installing Eleven-CLI globally..."
+npm install -g eleven-voice-cli
+
+# Verify installation
+echo "✅ Verifying installation..."
+eleven --version
+
+# Set up environment (prompt for API key if not set)
+if [ -z "$ELEVEN_API_KEY" ]; then
+    echo "🔑 ElevenLabs API key not found in environment."
+    echo "Please set your API key:"
+    echo "export ELEVEN_API_KEY=your_api_key_here"
+    echo "Or create a .env file with ELEVEN_API_KEY=your_api_key_here"
+fi
+
+# Test basic functionality
+echo "🧪 Testing CLI functionality..."
+eleven status
+
+echo "✅ Eleven-CLI deployment completed successfully!"
+echo ""
+echo "🎯 Next steps:"
+echo "1. Set your ElevenLabs API key (if not already done)"
+echo "2. Run 'eleven' to start the magnetic interface"
+echo "3. Use 'eleven init my-project' to create your first project"
+echo ""
+echo "📚 For detailed usage, see: COMPREHENSIVE_USER_GUIDE.md"
+```
+
+**Usage:**
+```bash
+# Make script executable
+chmod +x deploy.sh
+
+# Run deployment
+./deploy.sh
+```
+
+### **5. Nginx Configuration**
 
 ```nginx
 # /etc/nginx/sites-available/eleven-cli
@@ -587,7 +644,7 @@ server {
 }
 ```
 
-### **5. Monitoring**
+### **6. Monitoring**
 
 ```bash
 # Install monitoring tools

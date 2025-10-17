@@ -22,6 +22,9 @@ A powerful command-line tool that makes it easy to build voice agents and applic
 - **Smart Code Analysis** - Intelligent code suggestions and fixes
 - **Automated Documentation** - Generate comprehensive project docs
 - **AI-Assisted Development** - Streamline your development workflow
+- **Tab-Based Interface** - Professional tab interface similar to Cursor CLI
+- **Background Processing** - Run commands in background tabs
+- **Real-time Output** - See command output as it happens
 
 ### Project Management
 - **Project Scaffolding** - Quick project setup with templates
@@ -51,18 +54,49 @@ eleven --version
 ```bash
 # Set your ElevenLabs API key
 export ELEVEN_API_KEY=your_api_key_here
+```
 
-# Create your first project
-eleven init my-voice-agent
+### Magnetic CLI Interface (Recommended)
+```bash
+# Start the magnetic CLI (auto-integrates with Cursor AI)
+eleven
 
-# Test voice synthesis
-eleven test --text "Hello, world!"
+# Or use the dedicated magnetic command
+npm run magnetic
+```
+
+The **Magnetic CLI** is our flagship interface that combines all ElevenLabs and Cursor AI functionality into a single, beautiful experience:
+
+- **🎧 Auto-Cursor Integration**: Automatically detects and integrates with Cursor AI
+- **🎯 Mode-Based Workflow**: Organized contexts (main, voice, ai, tabs, system, project)
+- **⚡ Magnetic Shortcuts**: Quick commands with `!` prefix (!status, !tips, !history)
+- **🔧 Magnetic Commands**: Advanced features with `#` prefix (#theme, #export, #import)
+- **📋 Background Tabs**: Run commands in background with real-time output
+- **🎨 Beautiful UI**: Rich colors, icons, and polished presentation
+- **💡 Smart Auto-Complete**: Intelligent command suggestions
+
+#### **Other Interfaces Available**
+```bash
+# Classic CLI (direct commands)
+eleven-classic init my-voice-agent
+eleven-classic test --text "Hello, world!"
+
+# Tab-based interface
+eleven-tab
+
+# Simple interactive interface
+eleven-interactive
+
+# Universal interface (legacy)
+eleven-universal
 ```
 
 That's it! You're ready to build voice applications!
 
 ## Documentation
 
+- **[Universal CLI Guide](./UNIVERSAL_CLI_README.md)** - Complete universal interface documentation
+- **[Tab Interface Guide](./TAB_INTERFACE_README.md)** - Tab-based interface documentation
 - **[Complete User Guide](./USER_GUIDE.md)** - Comprehensive usage guide
 - **[Deployment Guide](./DEPLOYMENT_GUIDE.md)** - Production deployment instructions
 - **[Project Analysis](./COMPREHENSIVE_PROJECT_ANALYSIS.md)** - Technical architecture overview

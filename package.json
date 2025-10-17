@@ -4,14 +4,23 @@
   "description": "CLI for building ElevenLabs voice agents with AI assistance",
   "main": "bin/index.js",
   "bin": {
-    "eleven": "./bin/index.js"
+    "eleven": "./bin/magnetic-cli.js",
+    "eleven-magnetic": "./bin/magnetic-cli.js",
+    "eleven-universal": "./bin/universal.js",
+    "eleven-classic": "./bin/index.js",
+    "eleven-tab": "./bin/tab-cli.js",
+    "eleven-interactive": "./bin/interactive.js",
+    "eleven-cursor": "./bin/cursor-powered.js"
   },
   "scripts": {
-    "dev": "node bin/index.js",
-    "start": "node bin/index.js",
+    "dev": "node bin/magnetic-cli.js",
+    "start": "node bin/magnetic-cli.js",
+    "magnetic": "node bin/magnetic-cli.js",
     "test": "npx jest --verbose",
     "test:watch": "npx jest --watch",
     "test:coverage": "npx jest --coverage",
+    "test:voice": "node examples/voice-demo.js",
+    "quickstart": "node examples/voice-quickstart.js",
     "lint": "npx eslint src/ bin/ tests/ --ext .js",
     "lint:fix": "npx eslint src/ bin/ tests/ --ext .js --fix",
     "format": "npx prettier --write \"src/**/*.js\" \"bin/**/*.js\" \"tests/**/*.js\"",
@@ -30,6 +39,10 @@
     "voice-agents",
     "text-to-speech",
     "voice-synthesis",
+    "voice-cloning",
+    "speech-recognition",
+    "real-time-voice",
+    "voice-processing",
     "developer-tools"
   ],
   "author": {

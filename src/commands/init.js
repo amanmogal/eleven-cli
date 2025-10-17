@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('inquirer').default;
 const chalk = require('chalk').default;
 const ora = require('ora').default;
 const path = require('path');
@@ -564,7 +564,7 @@ async function saveProjectConfig(projectPath, config) {
  */
 async function initCommand(options = {}) {
   try {
-    logger.info('🎧 Initializing new voice agent project...');
+    logger.info('Initializing new voice agent project...');
 
     // Get project details
     const config = options.yes ? {
@@ -610,7 +610,7 @@ async function initCommand(options = {}) {
     // Success message
     logger.success(`Project "${config.projectName}" created successfully!`);
     
-    console.log(chalk.cyan('\n📁 Next steps:'));
+    console.log(chalk.cyan('\nNext steps:'));
     console.log(chalk.gray(`  cd ${config.projectName}`));
     console.log(chalk.gray('  cp .env.example .env'));
     console.log(chalk.gray('  # Edit .env with your ElevenLabs API key'));

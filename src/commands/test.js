@@ -1,9 +1,12 @@
+// Load environment variables
+require('dotenv').config();
+
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk').default;
-const ora = require('ora');
-const inquirer = require('inquirer');
+const ora = require('ora').default;
+const inquirer = require('inquirer').default;
 
 // Import utilities
 const Logger = require('../lib/logger');
@@ -13,6 +16,7 @@ const ErrorHandler = require('../lib/error-handler');
 
 const logger = new Logger();
 const fileManager = new FileManager();
+// Create config manager after dotenv is loaded
 const configManager = new ConfigManager();
 
 // Sample texts for testing
@@ -344,9 +348,10 @@ async function batchTestVoices(options = {}) {
  */
 async function testCommand(options = {}) {
   try {
-    logger.info('🎧 Testing voice synthesis...');
+    logger.info('Testing voice synthesis...');
 
-    // Validate configuration
+    // Load and validate configuration
+    configManager.loadConfig();
     if (!configManager.isValid()) {
       throw ErrorHandler.createError(
         'Invalid configuration. Please check your settings.',

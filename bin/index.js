@@ -6,12 +6,16 @@
  */
 
 // Load environment variables first
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+
+// Try to load .env from the project directory
+const projectDir = path.join(__dirname, '..');
+dotenv.config({ path: path.join(projectDir, '.env') });
 
 const { Command } = require('commander');
 const chalk = require('chalk').default;
 const boxen = require('boxen').default;
-const path = require('path');
 
 // Import utilities
 const Logger = require('../src/lib/logger');
@@ -30,7 +34,7 @@ const program = new Command();
 
 // ASCII Art and Welcome Message
 const welcomeMessage = boxen(
-  chalk.cyan.bold('🎧 eleven-cli') + '\n' +
+  chalk.cyan.bold('Eleven-CLI') + '\n' +
   chalk.gray('CLI for building ElevenLabs voice agents with AI assistance') + '\n' +
   chalk.gray('Version: 1.0.4'),
   {
@@ -44,7 +48,7 @@ const welcomeMessage = boxen(
 // Program configuration
 program
   .name('eleven')
-  .description('🎧 CLI for building ElevenLabs voice agents with AI assistance')
+  .description('CLI for building ElevenLabs voice agents with AI assistance')
   .version('1.0.4')
   .addHelpText('before', welcomeMessage);
 
@@ -242,12 +246,12 @@ program.on('command:*', (operands) => {
 
 // Handle process signals gracefully
 process.on('SIGINT', () => {
-  console.log(chalk.yellow('\n\n⚠️ Process interrupted by user'));
+  console.log(chalk.yellow('\n\nProcess interrupted by user'));
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log(chalk.yellow('\n\n⚠️ Process terminated'));
+  console.log(chalk.yellow('\n\nProcess terminated'));
   process.exit(0);
 });
 
