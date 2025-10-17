@@ -1,6 +1,6 @@
 {
   "name": "eleven-voice-cli",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "CLI for building ElevenLabs voice agents with AI assistance",
   "main": "bin/index.js",
   "bin": {
@@ -153,7 +153,10 @@
     "bin/",
     "src/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "deploy.sh",
+    "COMPREHENSIVE_USER_GUIDE.md",
+    "DEPLOYMENT_GUIDE.md"
   ],
   "preferGlobal": true,
   "os": [
